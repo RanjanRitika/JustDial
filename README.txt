@@ -1,6 +1,6 @@
 # Selenium Automation Testing Project: Identifying Car Washing Services
 ## Project Overview
-This Selenium automation testing project focuses on automating tasks related to the justdial.com web site. The primary objectives include searching for car wawshing service near current location, capturing car washing service details, navigating to free listing page, filling form, and capturing error message. once completed, going back to the home page and then searching for gyms to get the sub menu items. The project uses various dependencies and libraries to facilitate automation.
+This Selenium automation testing project focuses on automating tasks related to the justdial.com web site. The primary objectives include searching for car washing service near current location, capturing car washing service details, navigating to free listing page, filling form, and capturing error message. once completed, going back to the home page and then searching for gyms to get the sub menu items. The project uses various dependencies and libraries to facilitate automation.
 ## Project Structure
 ### 1. Maven Repository
 - **Maven Version**: 3.12.1
