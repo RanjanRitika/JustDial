@@ -1,0 +1,180 @@
+<html>
+<head>
+<title>TestNG:  edgetest</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>edgetest</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>20/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Mar 12 14:30:24 IST 2024</td>
+</tr>
+<tr><td>Total time:</td><td>156 seconds (156173 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='testCases.TC001.clickTopRated()'><b>clickTopRated</b><br>Test class: testCases.TC001</td>
+<td></td>
+<td>0</td>
+<td>testCases.TC001@1f9f6368</td></tr>
+<tr>
+<td title='testCases.TC002.verifyWhetherNumberIsTyped()'><b>verifyWhetherNumberIsTyped</b><br>Test class: testCases.TC002</td>
+<td></td>
+<td>0</td>
+<td>testCases.TC002@1c9b0314</td></tr>
+<tr>
+<td title='testCases.TC002.enterInvalidNum()'><b>enterInvalidNum</b><br>Test class: testCases.TC002</td>
+<td></td>
+<td>0</td>
+<td>testCases.TC002@1c9b0314</td></tr>
+<tr>
+<td title='testCases.TC001.extractDetails()'><b>extractDetails</b><br>Test class: testCases.TC001</td>
+<td></td>
+<td>83</td>
+<td>testCases.TC001@1f9f6368</td></tr>
+<tr>
+<td title='testCases.TC003.scrollToGyms()'><b>scrollToGyms</b><br>Test class: testCases.TC003</td>
+<td></td>
+<td>3</td>
+<td>testCases.TC003@45385f75</td></tr>
+<tr>
+<td title='testCases.TC001.verifyWhetherOnHomePage()'><b>verifyWhetherOnHomePage</b><br>Test class: testCases.TC001</td>
+<td></td>
+<td>0</td>
+<td>testCases.TC001@1f9f6368</td></tr>
+<tr>
+<td title='testCases.TC002.getErrorMsg()'><b>getErrorMsg</b><br>Test class: testCases.TC002</td>
+<td></td>
+<td>0</td>
+<td>testCases.TC002@1c9b0314</td></tr>
+<tr>
+<td title='testCases.TC001.clickSearch()'><b>clickSearch</b><br>Test class: testCases.TC001</td>
+<td></td>
+<td>0</td>
+<td>testCases.TC001@1f9f6368</td></tr>
+<tr>
+<td title='testCases.TC001.searchCategory()'><b>searchCategory</b><br>Test class: testCases.TC001</td>
+<td></td>
+<td>0</td>
+<td>testCases.TC001@1f9f6368</td></tr>
+<tr>
+<td title='testCases.TC001.closePopUp()'><b>closePopUp</b><br>Test class: testCases.TC001</td>
+<td></td>
+<td>4</td>
+<td>testCases.TC001@1f9f6368</td></tr>
+<tr>
+<td title='testCases.TC002.verifyWhetherOnFreeListing()'><b>verifyWhetherOnFreeListing</b><br>Test class: testCases.TC002</td>
+<td></td>
+<td>0</td>
+<td>testCases.TC002@1c9b0314</td></tr>
+<tr>
+<td title='testCases.TC002.clickOnFreeListing()'><b>clickOnFreeListing</b><br>Test class: testCases.TC002</td>
+<td></td>
+<td>6</td>
+<td>testCases.TC002@1c9b0314</td></tr>
+<tr>
+<td title='testCases.TC001.clickLocationSearchBox()'><b>clickLocationSearchBox</b><br>Test class: testCases.TC001</td>
+<td></td>
+<td>0</td>
+<td>testCases.TC001@1f9f6368</td></tr>
+<tr>
+<td title='testCases.TC001.detectCurrentLocation()'><b>detectCurrentLocation</b><br>Test class: testCases.TC001</td>
+<td></td>
+<td>0</td>
+<td>testCases.TC001@1f9f6368</td></tr>
+<tr>
+<td title='testCases.TC003.navigateBackToHomePage()'><b>navigateBackToHomePage</b><br>Test class: testCases.TC003</td>
+<td></td>
+<td>3</td>
+<td>testCases.TC003@45385f75</td></tr>
+<tr>
+<td title='testCases.TC002.clickStartNow()'><b>clickStartNow</b><br>Test class: testCases.TC002</td>
+<td></td>
+<td>0</td>
+<td>testCases.TC002@1c9b0314</td></tr>
+<tr>
+<td title='testCases.TC003.subMenuItems()'><b>subMenuItems</b><br>Test class: testCases.TC003</td>
+<td></td>
+<td>14</td>
+<td>testCases.TC003@45385f75</td></tr>
+<tr>
+<td title='testCases.TC003.clickOnGyms()'><b>clickOnGyms</b><br>Test class: testCases.TC003</td>
+<td></td>
+<td>2</td>
+<td>testCases.TC003@45385f75</td></tr>
+<tr>
+<td title='testCases.TC001.sortingByRating()'><b>sortingByRating</b><br>Test class: testCases.TC001</td>
+<td></td>
+<td>5</td>
+<td>testCases.TC001@1f9f6368</td></tr>
+<tr>
+<td title='testCases.TC001.filterRating()'><b>filterRating</b><br>Test class: testCases.TC001</td>
+<td></td>
+<td>0</td>
+<td>testCases.TC001@1f9f6368</td></tr>
+</table><p>
+</body>
+</html>

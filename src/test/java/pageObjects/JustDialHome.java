@@ -3,7 +3,15 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
+import org.openqa.selenium.JavascriptExecutor;
+
+
+//Page object class for Just Dial Home Page
 public class JustDialHome extends BasePage {
 	// Constructor for calling the driver
 	public JustDialHome(WebDriver driver) {
@@ -54,7 +62,14 @@ public class JustDialHome extends BasePage {
 	}
 	
 	public void clickDetectLocation() {
-		detectCurrentLocation.click();
+		//detectCurrentLocation.click();
+		new WebDriverWait(driver,Duration.ofSeconds(30)).until(ExpectedConditions.elementToBeClickable(detectCurrentLocation));
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click();", detectCurrentLocation);
+	}
+	
+	public WebElement getDetectLocation() {
+		return detectCurrentLocation;
 	}
 
 	public WebElement getCategorySearchBox() {
@@ -67,6 +82,10 @@ public class JustDialHome extends BasePage {
 	
 	public WebElement getGym() {
 		return gym;
+	}
+	
+	public String getTitle() {
+		return driver.getTitle();
 	}
 
 }

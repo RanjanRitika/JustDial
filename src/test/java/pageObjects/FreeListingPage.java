@@ -4,7 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+//Page object class for Free Listing Page
 public class FreeListingPage extends BasePage{
+	// Constructor for calling the driver
 	public FreeListingPage(WebDriver driver) {
 		super(driver);
 	}
@@ -43,4 +45,8 @@ public class FreeListingPage extends BasePage{
     public WebElement getRegistrationSuccessDialog() {
     	return registrationSuccessDialog;
     }
+
+	public String getTitle() {
+		return driver.getTitle();
+	}
 }

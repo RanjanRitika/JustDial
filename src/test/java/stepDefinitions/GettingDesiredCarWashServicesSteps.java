@@ -26,6 +26,7 @@ import pageObjects.JustDialHome;
 import pageObjects.SearchResultPage;
 import testBase.BaseClass;
 
+//Cucumber step definitions file
 public class GettingDesiredCarWashServicesSteps {
 	static WebDriver driver;
 	static Logger logger;
@@ -35,7 +36,7 @@ public class GettingDesiredCarWashServicesSteps {
 	@BeforeAll
 	public static void driverSetup() throws IOException {
 		BaseClass setupdriver = new BaseClass();
-		setupdriver.setup("os","chrome");
+		setupdriver.setup("windows","chrome");
 		
 		driver = BaseClass.getDriver();
 	    p = BaseClass.getProperties();
@@ -57,7 +58,6 @@ public class GettingDesiredCarWashServicesSteps {
 
 	@When("the sign-up pop-up shows the user clicks on Maybe later")
 	public void the_sign_up_pop_up_shows_the_user_clicks_on_Maybe_later() {
-	    // Write code here that turns the phrase above into concrete actions
 		jh = new JustDialHome(BaseClass.getDriver());
 		try {
 			new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[text()='Maybe Later']")));
@@ -74,13 +74,11 @@ public class GettingDesiredCarWashServicesSteps {
 
 	@Then("the user should be re-directed to the Just Dial home page")
 	public void the_user_should_be_re_directed_to_the_just_dial_home_page() {
-	    // Write code here that turns the phrase above into concrete actions
 		jh.getCategorySearchBox().isDisplayed();
 	}
 
 	@When("the search info is typed")
 	public void the_search_info_is_typed() {
-	    // Write code here that turns the phrase above into concrete actions
 		logger.info("Detecting the current location");
 		jh.clickLocationSearchBox();
 		jh.clickDetectLocation();
@@ -90,13 +88,11 @@ public class GettingDesiredCarWashServicesSteps {
 
 	@When("the search button is clicked")
 	public void the_search_button_is_clicked() {
-	    // Write code here that turns the phrase above into concrete actions
 		jh.clickSearchButton();
 	}
 
 	@Then("the user should be re-directed to the search page")
 	public void the_user_should_be_re_directed_to_the_search_page() {
-	    // Write code here that turns the phrase above into concrete actions
 		try {
 			new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='jsx-3349e7cd87e12d75 title_anchor_tag']")));
 			Thread.sleep(1000);
@@ -147,7 +143,6 @@ public class GettingDesiredCarWashServicesSteps {
   @Then("get name, phone number and rating")
   public void get_name_phone_number_and_rating() throws Exception{
   	SearchResultPage sr = new SearchResultPage(BaseClass.driver);
-  	//int index = 1;
 		for (int i = 0; i < 5; i++) {
 			List<WebElement> results = sr.getResults(i);
 			List<WebElement> ratings = sr.getRatings(i);
@@ -229,7 +224,6 @@ public class GettingDesiredCarWashServicesSteps {
   
   @And("the sub menu items are visible")
   public void the_sub_menu_items_are_visible() {
-	  //SearchResultPage sr = new SearchResultPage(driver);
 	  try {
 			new WebDriverWait(BaseClass.getDriver(),Duration.ofSeconds(30)).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@class='jsx-6ab5af3a8693e5db font15 fw500 mr-6']")));	
 		} catch(Exception e) {

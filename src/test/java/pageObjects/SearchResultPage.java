@@ -2,14 +2,16 @@ package pageObjects;
 
 import java.util.List;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.WebElement;
 
 import org.openqa.selenium.support.FindBy;
 
+//Page object class for Search Result Page
 public class SearchResultPage extends BasePage {
-
+	// Constructor for calling the driver
 	public SearchResultPage(WebDriver driver) {
 		super(driver);
 	}
@@ -49,6 +51,16 @@ public class SearchResultPage extends BasePage {
 
 	@FindBy(xpath = "//div[@class='jsx-6ab5af3a8693e5db font15 fw500 mr-6']")
 	List<WebElement> listItems;
+	
+	@FindBy(xpath="//span[contains(text(),'Contact Information')]")
+	WebElement contactInfo;
+	
+	@FindBy(xpath="//ul[@class='jsx-d17cc062da6c7a17']/descendant::a")
+	List<WebElement> contactNums;
+	
+	@FindBy(xpath="//span[@class='jsx-d17cc062da6c7a17 jd_modal_close jdicon']")
+	WebElement closeContactInfo;
+	
 
 	public List<WebElement> getTitleAnchor() {
 		return titleAnchor;
@@ -97,4 +109,19 @@ public class SearchResultPage extends BasePage {
 	public List<WebElement> getListItems() {
 		return listItems;
 	}
+	
+	public WebElement getContactInfo() {
+		return contactInfo;
+	}
+	
+	public List<WebElement> getContactNums(){
+		return contactNums;
+	}
+	
+	public void clickCloseContactInfo() throws InterruptedException {
+		Thread.sleep(5000);
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click;", closeContactInfo);
+	}
+	
 }

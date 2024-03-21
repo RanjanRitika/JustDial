@@ -11,8 +11,8 @@
       <class name="testCases.TC002">
         <methods>
           <include name="tearDown"/>
-          <include name="verifyErrorMsg"/>
           <include name="setup"/>
+          <include name="getErrorMsg"/>
         </methods>
       </class> <!-- testCases.TC002 -->
     </classes>

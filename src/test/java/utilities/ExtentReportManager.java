@@ -37,9 +37,9 @@ public class ExtentReportManager implements ITestListener {
 		sparkReporter.config().setTheme(Theme.DARK);
 		
 		//populating the common info
-		extent = new ExtentReports();
-		extent.attachReporter(sparkReporter);
-		extent.setSystemInfo("Application", "justdial");
+		extent = new ExtentReports();  
+		extent.attachReporter(sparkReporter);   //attaching the extent reports object to the extent spark reporter object 
+		extent.setSystemInfo("Application", "justdial");   //passing the common info using the setSystemInfo method
 		extent.setSystemInfo("Module", "Admin");
 		extent.setSystemInfo("Sub Module", "Customers");
 		
@@ -52,9 +52,15 @@ public class ExtentReportManager implements ITestListener {
 	}
 
 	public void onTestSuccess(ITestResult result) {
-		test = extent.createTest(result.getTestClass().getName());
+		test = extent.createTest(result.getTestClass().getName());   //create a new entry in the report; result gets the info about the test methods
 		test.assignCategory(result.getMethod().getGroups()); // to display groups in report
 		test.log(Status.PASS, result.getName() + " got successfully executed");
+		try {
+			String imgPath = new BaseClass().captureScreen(result.getName());
+			test.addScreenCaptureFromPath(imgPath);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
 	}
 
 	public void onTestFailure(ITestResult result) {
@@ -78,9 +84,9 @@ public class ExtentReportManager implements ITestListener {
 	}
 
 	public void onFinish(ITestContext testContext) {
-		extent.flush();
+		extent.flush(); 		//to erase the previous report and create a new report
 		
-//		//opening the extent report after the test is completed
+		//opening the extent report after the test is completed
 		String pathOfExtentReport = System.getProperty("user.dir")+"\\reports\\"+repName;
 		File extentReport = new File(pathOfExtentReport);
 		
